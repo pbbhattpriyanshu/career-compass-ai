@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+# Career Compass AI
 
-## Project info
+An AI-powered web app that provides students with personalized career suggestions, skill recommendations, and actionable advice based on their academic profile and interests.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **Personalized Recommendations:** Input your interests, degree, CGPA, and career goal to receive tailored career suggestions.
+- **Skill Suggestions:** Get a list of relevant skills to learn for your chosen path.
+- **AI Advice:** Receive a short, actionable paragraph of guidance.
+- **Modern UI:** Clean, mobile-responsive, and user-friendly interface built with React, Vite, and shadcn/ui components.
+- **Supabase Integration:** Uses Supabase Edge Functions and Lovable AI (Gemini) for backend intelligence.
 
-There are several ways of editing your application.
+## Demo
 
-**Use Lovable**
+![screenshot](public/screenshot.png) <!-- Add a screenshot if available -->
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or bun
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Installation
+```bash
+git clone https://github.com/your-username/career-compass-ai.git
+cd career-compass-ai
+npm install
+# or
+bun install
 ```
 
-**Edit a file directly in GitHub**
+### Development
+```bash
+npm run dev
+# or
+bun run dev
+```
+The app will be available at `http://localhost:5173` by default.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
+```bash
+npm run build
+```
 
-**Use GitHub Codespaces**
+### Lint & Test
+```bash
+npm run lint
+npm run test
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+- `src/` — Main source code
+	- `pages/` — Main pages (Index.tsx, NotFound.tsx)
+	- `components/` — UI components (shadcn/ui)
+	- `integrations/supabase/` — Supabase client and types
+	- `lib/` — Utilities
+- `supabase/functions/` — Edge functions (career-advisor)
+- `public/` — Static assets
 
-This project is built with:
+## How It Works
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **User Input:** Students fill out a form with their interests, degree, CGPA, and career goal.
+2. **AI Processing:** The frontend calls a Supabase Edge Function, which invokes Lovable AI (Gemini) to generate recommendations.
+3. **Results:** The app displays three career suggestions, a list of skills, and a personalized advice paragraph.
 
-## How can I deploy this project?
+## Environment Variables
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Create a `.env` file in the project root with the following:
 
-## Can I connect a custom domain to my Lovable project?
+```
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_PUBLISHABLE_KEY=your-supabase-key
+```
 
-Yes, you can!
+For Supabase Edge Functions, set the `LOVABLE_API_KEY` in your Supabase project environment.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Technologies Used
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Supabase](https://supabase.com/)
+- [Lovable AI (Gemini)](https://lovable.ai/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Zod](https://zod.dev/)
+- [React Hook Form](https://react-hook-form.com/)
+
+## License
+
+MIT
