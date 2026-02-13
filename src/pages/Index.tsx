@@ -161,10 +161,10 @@ const Index = () => {
                   name="interests"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Interests</FormLabel>
+                      <FormLabel>Skills</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="e.g. machine learning, web development, data science"
+                          placeholder="e.g. fastapi, nodejs, docker, cloud, machine learning"
                           {...field}
                         />
                       </FormControl>
